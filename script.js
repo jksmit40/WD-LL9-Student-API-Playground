@@ -23,56 +23,7 @@ const capitalEl = document.getElementById("capitalValue");
 const regionEl = document.getElementById("regionValue");
 const populationEl = document.getElementById("populationValue");
 const languagesEl = document.getElementById("languagesValue");
-/* ------------------------------------------------------------
-   STEP 1: Connect the button's click event.
-   ------------------------------------------------------------ */
-searchBtn.addEventListener("click", fetchCountry);
-/* ------------------------------------------------------------
-   STEP 2: Create fetchCountry()
-   ------------------------------------------------------------ */
-async function fetchCountry() {
-  const countryName = countryInput.value.trim();
-  if (!countryName) return; // nothing typed, nothing to do
-  /* ------------------------------------------------------------
-     STEP 3: Show "Loading..."
-     ------------------------------------------------------------ */
-  showLoading();
-  try {
-    /* ------------------------------------------------------------
-       STEP 4: Build the fetch request
-       ------------------------------------------------------------
-       The old v3.1 API is retired. v5 requires an API key sent as
-       an Authorization header, and (for browser requests) your
-       API key must allow-list your origin (127.0.0.1 / localhost/ or your live preview url without the HTTPS)
-       on the API Keys page at restcountries.com.
-       ------------------------------------------------------------ */
-    const API_KEY = "";
-    const url =
-      `https://api.restcountries.com/countries/v5?q=${encodeURIComponent(countryName)}` +
-      `&response_fields=names.common,capitals,region,population,languages,flag.url_png,flag.description`;
-    const response = await fetch(url, {
-      headers: { Authorization: `Bearer ${API_KEY}` },
-    });
-    if (!response.ok) {
-      throw new Error("Country not found");
-    }
-    /* ------------------------------------------------------------
-       STEP 5: Convert response -> JSON
-       ------------------------------------------------------------
-       v5 wraps results in { data: { objects: [...] } }
-       ------------------------------------------------------------ */
-    const data = await response.json();
-    const objects = data.data.objects;
-    if (!objects || objects.length === 0) {
-      throw new Error("Country not found");
-    }
-    const country = objects[0];
-    /* ------------------------------------------------------------
-       STEP 6: Display ONE property. Start simple.
-       Display only: Country Name.
-       ------------------------------------------------------------ */
-    countryNameEl.textContent = country.names.common;
-    /* ============================================================
+
        TEAM BUILD STARTS HERE
        ============================================================ */
 

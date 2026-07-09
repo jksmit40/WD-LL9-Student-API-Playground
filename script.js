@@ -24,17 +24,15 @@ const regionEl = document.getElementById("regionValue");
 const populationEl = document.getElementById("populationValue");
 const languagesEl = document.getElementById("languagesValue");
 
-       TEAM BUILD STARTS HERE
-       ============================================================ */
+// CODE ALONG WITH INSTRUCTOR STARTS HERE
 
-
-    /* ============================================================
+/* ============================================================
        TEAM BUILD STARTS HERE
        The instructor demo stops at Step 6. Steps 7-10 are your
        team's mission. Use the exact pattern from Step 6 above.
        ============================================================ */
 
-    /* ------------------------------------------------------------
+/* ------------------------------------------------------------
        STEP 7: Display the Flag
        ------------------------------------------------------------
        TODO:
@@ -47,8 +45,7 @@ const languagesEl = document.getElementById("languagesValue");
        flagImg.alt = ???
        ------------------------------------------------------------ */
 
-
-    /* ------------------------------------------------------------
+/* ------------------------------------------------------------
        STEP 8: Display Capital, Region, Population
        ------------------------------------------------------------
        TODO:
@@ -64,8 +61,7 @@ const languagesEl = document.getElementById("languagesValue");
        populationEl.textContent = ???
        ------------------------------------------------------------ */
 
-
-    /* ------------------------------------------------------------
+/* ------------------------------------------------------------
        STEP 9: Display Languages
        ------------------------------------------------------------
        TODO:
@@ -79,8 +75,7 @@ const languagesEl = document.getElementById("languagesValue");
        languagesEl.textContent = ???
        ------------------------------------------------------------ */
 
-
-    /* ------------------------------------------------------------
+/* ------------------------------------------------------------
        STEP 10a: Improve the experience — clean up on SUCCESS
        ------------------------------------------------------------
        TODO:
@@ -89,10 +84,9 @@ const languagesEl = document.getElementById("languagesValue");
        - Make sure old errors are gone: errorEl.classList.add('hidden');
        ------------------------------------------------------------ */
 
+// } catch (error) {
 
-  } catch (error) {
-
-    /* ------------------------------------------------------------
+/* ------------------------------------------------------------
        STEP 10b: Improve the experience — error handling
        ------------------------------------------------------------
        TODO:
@@ -103,21 +97,20 @@ const languagesEl = document.getElementById("languagesValue");
              `We couldn't find "${countryName}". Check the spelling and try again.`;
            errorEl.classList.remove('hidden');
        ------------------------------------------------------------ */
-    console.error(error);
+//     console.error(error);
 
-  }
-}
-
+//   }
+// }
 
 /* ------------------------------------------------------------
    Helper functions — already built for you.
    ------------------------------------------------------------ */
 function showLoading() {
-  loadingEl.classList.remove('hidden');
-  errorEl.classList.add('hidden');
-  resultCard.classList.add('hidden');
+  loadingEl.classList.remove("hidden");
+  errorEl.classList.add("hidden");
+  resultCard.classList.add("hidden");
 }
 
 function hideLoading() {
-  loadingEl.classList.add('hidden');
+  loadingEl.classList.add("hidden");
 }
